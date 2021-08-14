@@ -1,0 +1,2 @@
+# Trainings
+All testing projects
