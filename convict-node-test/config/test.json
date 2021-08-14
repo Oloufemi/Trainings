@@ -1,0 +1,12 @@
+{
+  "cassandra": {
+    "contactPoints": ["localhost"],
+    "localDataCenter": "datacenter1",
+    "protocol": {
+      "port": 9042
+    },
+    "ssl": {
+      "enabled": false
+    }
+  }
+}
