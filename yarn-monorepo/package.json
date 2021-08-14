@@ -1,0 +1,21 @@
+{
+  "name": "@yarn-monorepo/parent",
+  "version": "1.0.0",
+  "description": "Mono repo",
+  "main": "index.js",
+  "repository": "null",
+  "author": "oloufemi",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "config",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn --cwd backend start",
+    "build": "yarn --cwd frontend build",
+    "build:all": "yarn workspaces run build"
+  }
+}
