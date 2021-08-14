@@ -1,0 +1,1 @@
+{"id":"LKQg5DG72uJqm8aj","body":"-- change table name and structure\nCREATE TABLE shango_two.table_name(\n\tpk text,\n\tcck text,\n\tdata text,\n\tPRIMARY KEY(pk,cck)\n);","filename":"script_1.cql","clusterName":"Cluster AllowAllAuthenticator","keyspace":"shango_two","source":"action","modified":true}

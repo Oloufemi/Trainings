@@ -1,0 +1,1 @@
+{"id":"5nYePLTiu2ZB1bXy","body":"-- change table name and structure\nCREATE TABLE shango_two.player(\n\tfirstname text,\n\tlastname text,\n\temail text,\n\tPRIMARY KEY(firstname)\n);","filename":"script_8.cql","clusterName":"Cluster AllowAllAuthenticator","keyspace":"coverbookview","source":"action","modified":true}

@@ -1,0 +1,9 @@
+{
+  "cassandraWorkbench.activeClusterName": "Cluster AllowAllAuthenticator",
+  "cassandraWorkbench.activeKeyspace": [
+    ["Cluster AllowAllAuthenticator", "shango_two"],
+    ["Cluster Shango", "coverbookview"],
+    ["Cluster PasswordAuthenticator", "shango_two"]
+  ],
+  "cassandraWorkbench.splitPosition": 59.44444444444444
+}

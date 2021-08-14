@@ -1,0 +1,17 @@
+{
+  "name": "test-cassandra-driver",
+  "version": "1.0.0",
+  "description": "Test",
+  "main": "index.js",
+  "author": "TEST",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "aws-sigv4-auth-cassandra-plugin": "^1.0.2",
+    "cassandra-driver": "^4.6.3",
+    "fs": "^0.0.1-security"
+  }
+}
