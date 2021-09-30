@@ -1,0 +1,11 @@
+{
+  "name": "fp-ts",
+  "version": "1.0.0",
+  "description": "Mastering fp-ts",
+  "main": "index.js",
+  "author": "adek`s",
+  "license": "MIT",
+  "dependencies": {
+    "fp-ts": "^2.11.4"
+  }
+}
