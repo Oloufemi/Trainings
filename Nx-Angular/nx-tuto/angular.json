@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "projects": {
+    "feature-search": {
+      "projectType": "library",
+      "root": "libs/feature-search",
+      "sourceRoot": "libs/feature-search/src",
+      "prefix": "nx-tuto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/feature-search"],
+          "options": {
+            "project": "libs/feature-search/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/feature-search/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/feature-search/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-search"],
+          "options": {
+            "jestConfig": "libs/feature-search/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature-search/src/**/*.ts",
+              "libs/feature-search/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "feature-upgrade": {
+      "projectType": "library",
+      "root": "libs/feature-upgrade",
+      "sourceRoot": "libs/feature-upgrade/src",
+      "prefix": "nx-tuto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/feature-upgrade"],
+          "options": {
+            "project": "libs/feature-upgrade/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/feature-upgrade/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/feature-upgrade/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-upgrade"],
+          "options": {
+            "jestConfig": "libs/feature-upgrade/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature-upgrade/src/**/*.ts",
+              "libs/feature-upgrade/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "flight-app-tuto": {
+      "projectType": "application",
+      "root": "apps/flight-app-tuto",
+      "sourceRoot": "apps/flight-app-tuto/src",
+      "prefix": "nx-tuto",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/flight-app-tuto",
+            "index": "apps/flight-app-tuto/src/index.html",
+            "main": "apps/flight-app-tuto/src/main.ts",
+            "polyfills": "apps/flight-app-tuto/src/polyfills.ts",
+            "tsConfig": "apps/flight-app-tuto/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/flight-app-tuto/src/favicon.ico",
+              "apps/flight-app-tuto/src/assets"
+            ],
+            "styles": ["apps/flight-app-tuto/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/flight-app-tuto/src/environments/environment.ts",
+                  "with": "apps/flight-app-tuto/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "flight-app-tuto:build:production"
+            },
+            "development": {
+              "browserTarget": "flight-app-tuto:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "flight-app-tuto:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/flight-app-tuto/src/**/*.ts",
+              "apps/flight-app-tuto/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/flight-app-tuto"],
+          "options": {
+            "jestConfig": "apps/flight-app-tuto/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "flight-app-tuto-e2e": {
+      "root": "apps/flight-app-tuto-e2e",
+      "sourceRoot": "apps/flight-app-tuto-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/flight-app-tuto-e2e/cypress.json",
+            "devServerTarget": "flight-app-tuto:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "flight-app-tuto:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/flight-app-tuto-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["flight-app-tuto"]
+    },
+    "flight-data": {
+      "projectType": "library",
+      "root": "libs/flight-data",
+      "sourceRoot": "libs/flight-data/src",
+      "prefix": "nx-tuto",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/flight-data"],
+          "options": {
+            "project": "libs/flight-data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/flight-data/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/flight-data/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/flight-data"],
+          "options": {
+            "jestConfig": "libs/flight-data/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/flight-data/src/**/*.ts",
+              "libs/flight-data/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    }
+  }
+}

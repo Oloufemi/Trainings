@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-tuto/feature-search": ["libs/feature-search/src/index.ts"],
+      "@nx-tuto/feature-upgrade": ["libs/feature-upgrade/src/index.ts"],
+      "@nx-tuto/flight-data": ["libs/flight-data/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
